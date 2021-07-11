@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,115 +16,139 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
-        </button> 
+        </button>
         <a class="navbar-brand" href="#">Vaccine Tracker</a>
-      
+
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Login</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">SignUp</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#"></a>
-              </li>
-            
-          </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="target" href="#">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">SignUp</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"></a>
+                </li>
+
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
         </div>
-      </nav>
+    </nav>
     <title>Coruna App</title>
-  </head>
-  <style>
-      .container
-      {
-          /* margin-right: 10px; */
-            /* margin-left: 10px; */
-            margin-top: 10px;
-      }
-      .my-row
-      {
-          /* border: 1px solid black; */
-      }
-      .my-col
-      {
+</head>
+<style>
+    .container {
+        /* margin-right: 10px; */
+        /* margin-left: 10px; */
+        margin-top: 50px;
+    }
+    
+    .my-row {
+        /* border: 1px solid black; */
+    }
+    
+    .my-col {
         /* border: 1px solid black; */
         /* margin: 1px; */
-      }
-      .ipt
-      {
-          margin: 1px;
-      }
-  </style>
+    }
+    
+    .ipt {
+        margin: 1px;
+    }
+    
+    .card {
+        margin-bottom: 20px;
+    }
+</style>
 
-  <body>
-    <div class="container" >
-        <!-- input part -->
-        <div class="ipt">
-        <div class="row my-row ipt">
-            <div class="col-lg-3 col-md-6 col-sm-6 my-col ipt" >
-                <h5>Please Enter the Date</h5>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a onclick="changepin()" href="#">Search By Pin</a></li>
+        <li class="breadcrumb-item"><a onclick="changedist()" href="#">Search By District</a></li>
+        <!-- <li class="breadcrumb-item"><a href=""> Data</a></li> -->
+    </ol>
+</nav>
+
+<body>
+    <!-- ---------------------------Search by pin-------------------------------- -->
+    <div id="pinser" style="display: block;">
+        <div class="container">
+            <div class="alert alert-warning" id="err" style="display: none;" role="alert">
+                No Slots Found
             </div>
-            <div class="col-lg-2 col-md-6 col-sm-6 my-col ipt" >
-                <input type="date" name="" id="vacDate" min="1997-01-01" max="">
 
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 my-col ipt" >
-                <h5>Please Enter the Pincode</h5>
-            </div>
-            
-            <div class="col-lg-2 col-md-4 col-sm-5 my-col ipt" ><input type="number" name="" placeholder="Enter Pincode" pattern="[0-9]{6}" id="pincode" required></div>
-            <div class="col-lg-1 col-md-4 col-sm-5 my-col ipt" ><button class="btn btn-primary" onclick="asd()">Search</button></div>
-            
-        </div>
-    </div>
-
-        <!-- output part -->
-
-
-        <div id="maincont">
-
-        </div>
-        <!-- Dummy Data -->
-        <div class="row my-row">
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 my-col" >
-                <div class="card" style="">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
+            <!-- input part -->
+            <div class="ipt">
+                <div class="row my-row ipt">
+                    <div class="col-lg-3 col-md-6 col-sm-6 my-col ipt">
+                        <h5>Please Enter the Date</h5>
                     </div>
-                  </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm col-xs my-col" >
-                <div class="card" style="">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title2</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <div class="col-lg-2 col-md-6 col-sm-6 my-col ipt">
+                        <input class="form-control" type="date" name="" id="vacDate" min="1997-01-01" max="">
+
                     </div>
-                  </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 my-col ipt">
+                        <h5>Please Enter the Pincode</h5>
+                    </div>
+
+                    <div class="col-lg-2 col-md-4 col-sm-5 my-col ipt"><input type="number" class="form-control" name="" placeholder="Enter Pincode" pattern="[0-9]{6}" id="pincode" required></div>
+                    <div class="col-lg-1 col-md-4 col-sm-5 my-col ipt"><button class="btn btn-primary" onclick="asd()">Search</button></div>
+
+                </div>
             </div>
-            
-            
+
+            <!-- output part -->
+
+
+            <div id="maincont">
+
+            </div>
+            <!-- Dummy Data -->
+            <!-- <div class="row my-row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 my-col">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text"><strong><h5>Vaccine Name: - </h5></strong>Covi</p><br>
+                            <p class="card-text"><strong><h5>Vaccine Price: - </h5></strong>800</p><br>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm col-xs my-col">
+                    <div class="card" style="">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title2</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div> -->
         </div>
-    </div>
+        <div id="distser" style="display:none">
+            <h1>this section is for District search</h1>
+
+        </div>
 
 
 
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
-</html> 
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>
